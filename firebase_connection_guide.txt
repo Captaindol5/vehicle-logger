@@ -1,0 +1,85 @@
+FIREBASE REALTIME DATABASE - SETUP GUIDE
+
+
+
+firebase services that are using?
+
+1. Firebase Authentication (Email/Password)
+   
+   
+2. Firebase Realtime Database
+ 
+
+HOW TO CONNECT YOUR FIREBASE ACCOUNT
+
+Follow these exact steps to link your Firebase project to this code:
+
+
+STEP 1: Create a Firebase Project
+
+Go to the Firebase Console
+
+Click "Add Project" and give it a name.
+
+Click "Create Project".
+
+STEP 2: Enable Authentication
+
+Inside your new project dashboard, click "Authentication" on the left menu.
+
+Click "Get Started".
+
+Click "Email/Password" in the list of Sign-in providers.
+
+Enable it and click "Save".
+
+STEP 3: Enable REALTIME DATABASE
+
+Click "Realtime Database" on the left menu . DO NOT click Firestore Database.
+
+Click "Create Database".
+
+Choose your location and click "Next".
+
+Important: Choose "Start in Test Mode" (this allows reading and writing without setting up complex security rules).
+
+Click "Enable".
+
+STEP 4: Get Your Configuration Keys
+
+Click the Settings Gear icon next to "Project Overview" in the top left and select "Project settings".
+
+Scroll down to the "Your apps" section.
+
+Click the Web icon (</>) to add a web app.
+
+Give it an app nickname and click "Register app".
+
+You will see a `firebaseConfig` object. Notice that it should contain a `databaseURL` (if it doesn't, you can find the Database URL in the Realtime Database tab).
+
+STEP 5: Paste Your Keys into the Code
+
+You must paste these keys into BOTH the backend and frontend `.env` files.
+
+1. Open `backend/.env` and replace the placeholders (MAKE SURE TO INCLUDE DATABASE_URL): 
+
+   VITE_FIREBASE_API_KEY=AIzaSy...
+   VITE_FIREBASE_AUTH_DOMAIN=your-project.firebaseapp.com
+   VITE_FIREBASE_DATABASE_URL=https://your-project-default-rtdb.firebaseio.com
+   VITE_FIREBASE_PROJECT_ID=your-project
+   VITE_FIREBASE_STORAGE_BUCKET=your-project.appspot.com
+   VITE_FIREBASE_MESSAGING_SENDER_ID=123456789
+   VITE_FIREBASE_APP_ID=1:123456789:web:abcdef
+
+2. Open `frontend/.env` and do the exact same thing.
+
+STEP 6: Restart Servers
+
+If your backend or frontend servers were already running in the VS Code terminal, you MUST restart them so they read the new `.env` files.
+
+in terminal 1 (backend): press `Ctrl + C`, then type `npm start`
+
+In terminal 2 (frontend): press `Ctrl + C`, then type `npm run dev`
+
+
+now connected
