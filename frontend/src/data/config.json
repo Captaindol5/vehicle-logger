@@ -1,0 +1,11 @@
+{
+  "serviceTypes": [
+    "Oil Change",
+    "Tire Rotation",
+    "Brake Inspection",
+    "MOT / Annual Inspection",
+    "Battery Replacement",
+    "General Repair",
+    "Other"
+  ]
+}
